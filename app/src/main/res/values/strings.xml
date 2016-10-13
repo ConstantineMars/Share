@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Share</string>
+    <string name="double_tap_to_share_text">Double tap to share text</string>
+
+    <string name="title_activity_fullscreen">Show fullscreen text</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="noData" >no data</string>
 </resources>

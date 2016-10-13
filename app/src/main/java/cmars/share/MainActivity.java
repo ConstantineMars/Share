@@ -1,5 +1,6 @@
 package cmars.share;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableInt;
 import android.graphics.Color;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
                 color.set(Color.RED);
+                share();
                 return super.onDoubleTap(e);
             }
 
@@ -34,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 return super.onFling(e1, e2, velocityX, velocityY);
             }
         });
+    }
+
+    private void share() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 
     @Override
