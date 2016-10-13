@@ -20,6 +20,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/double_tap_to_share_text" />
+        android:text="@{activity.text, default=@string/double_tap_to_share_text}" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:layout_alignParentBottom="true"
+        android:text="@string/instructions"/>
 </RelativeLayout>
 </layout>
