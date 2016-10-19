@@ -17,10 +17,15 @@
     android:background="@{activity.color}"
     tools:context="cmars.share.MainActivity">
 
-    <TextView
+    <TextView android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@{activity.text, default=@string/double_tap_to_share_text}" />
+
+    <EditText android:id="@+id/edit"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="match_parent"

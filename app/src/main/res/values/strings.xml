@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Share</string>
     <string name="double_tap_to_share_text">Double tap to share text</string>
-
     <string name="title_activity_fullscreen">Show fullscreen text</string>
     <string name="dummy_button">Close it</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="noData" >no data</string>
     <string name="share">Share</string>
-    <string name="instructions">Use Share button\nDouble tap to share with direct intent\nSwipe to increase counter and change shared text</string>
+    <string name="instructions">Use Share button\nDouble tap to share with direct intent\nSwipe to increase counter and change shared text\nLong press for DialogFragment</string>
 </resources>
