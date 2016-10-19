@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements CustomDialogFragm
 
             @Override
             public void onLongPress(MotionEvent e) {
-
+                color.set(Color.BLUE);
                 new CustomDialogFragment().show(getSupportFragmentManager(), CustomDialogFragment.class.getName());
                 super.onLongPress(e);
             }
