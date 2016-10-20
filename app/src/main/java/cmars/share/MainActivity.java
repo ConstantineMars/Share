@@ -72,7 +72,11 @@ public class MainActivity extends AppCompatActivity implements CustomDialogFragm
                 color.set(Color.GREEN);
 
                 DownloadManager downloadManager= (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                downloadManager.enqueue(new DownloadManager.Request(Uri.parse("http://developer.android.com/shareables/icon_templates-v4.0.zip")));
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://developer.android.com/shareables/icon_templates-v4.0.zip"));
+                request.setTitle("Title");
+                request.setDescription("Description");
+                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                downloadManager.enqueue(request);
 
                 return super.onSingleTapUp(e);
             }
