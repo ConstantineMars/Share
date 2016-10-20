@@ -1,13 +1,13 @@
 package cmars.share;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.internal.view.SupportMenuItem;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +15,10 @@ import android.support.v7.widget.ShareActionProvider;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -28,6 +26,7 @@ import java.util.Locale;
 import cmars.share.databinding.ActivityMainBinding;
 
 import static android.widget.Toast.LENGTH_LONG;
+
 
 public class MainActivity extends AppCompatActivity implements CustomDialogFragment.DialogListener{
 
@@ -66,6 +65,16 @@ public class MainActivity extends AppCompatActivity implements CustomDialogFragm
                 color.set(Color.BLUE);
                 new CustomDialogFragment().show(getSupportFragmentManager(), CustomDialogFragment.class.getName());
                 super.onLongPress(e);
+            }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                color.set(Color.GREEN);
+
+                DownloadManager downloadManager= (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                downloadManager.enqueue(new DownloadManager.Request(Uri.parse("http://developer.android.com/shareables/icon_templates-v4.0.zip")));
+
+                return super.onSingleTapUp(e);
             }
         });
 

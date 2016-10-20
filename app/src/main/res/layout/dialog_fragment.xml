@@ -5,9 +5,10 @@
     >
 
     <TextView android:id="@+id/text"
-        android:text="Transparent dialog"
+        android:text="Transparent dialog with google.com and 0800207020 hyperlinks"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:autoLink="phone|email|web"/>
     <EditText android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
